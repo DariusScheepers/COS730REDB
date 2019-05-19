@@ -15,7 +15,7 @@ CREATE TABLE IF NOT EXISTS `dbREDB`.`User` (
   `Name` VARCHAR(50) NOT NULL,
   `Description` VARCHAR(100) NOT NULL,
   `UserRole_ID` INT(10) UNSIGNED NOT NULL,
-  PRIMARY KEY (`ID`, `UserRole_ID`, `Stakeholder_ID`),
+  PRIMARY KEY (`ID`, `UserRole_ID`),
   INDEX `fk_User_UserRole1_idx` (`UserRole_ID` ASC),
   CONSTRAINT `fk_User_UserRole1`
     FOREIGN KEY (`UserRole_ID`)
