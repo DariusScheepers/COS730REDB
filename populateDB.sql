@@ -1,4 +1,5 @@
 INSERT INTO `dbredb`.`project` (`Name`, `Description`) VALUES ('Pacemaker', 'Pacemaker Software System');
+
 INSERT INTO `dbredb`.`stakeholdertype` (`Name`, `Description`) VALUES ('Patient', 'Using the pacemaker');
 INSERT INTO `dbredb`.`stakeholdertype` (`Name`, `Description`) VALUES ('Physician', 'Physician implanting or setting the pacemaker');
 INSERT INTO `dbredb`.`stakeholdertype` (`Name`, `Description`) VALUES ('Technician', 'Setting the pacemaker');
@@ -6,10 +7,12 @@ INSERT INTO `dbredb`.`stakeholdertype` (`Name`, `Description`) VALUES ('Nurse', 
 INSERT INTO `dbredb`.`stakeholdertype` (`Name`, `Description`) VALUES ('Software Engineer', 'Developing and maintaining the system');
 INSERT INTO `dbredb`.`stakeholdertype` (`Name`, `Description`) VALUES ('Hardware Engineer', 'Setting up and maintaining the system hardware');
 INSERT INTO `dbredb`.`stakeholdertype` (`Name`, `Description`) VALUES ('General Staff', 'Any hospital staff assisting with using the system');
+
 INSERT INTO `dbredb`.`requirementtype` (`Name`, `Description`) VALUES ('Functional Requirement', 'System Functionality');
 INSERT INTO `dbredb`.`requirementtype` (`Name`, `Description`) VALUES ('Performance Requirement', 'System Performance');
 INSERT INTO `dbredb`.`requirementtype` (`Name`, `Description`) VALUES ('External Interface Requirement', 'System Interface and UI ');
 INSERT INTO `dbredb`.`requirementtype` (`Name`, `Description`) VALUES ('Design Contraint', 'System Limitations');
+
 INSERT INTO `dbredb`.`documenttype` (`Name`, `Description`) VALUES ('Requirement', 'Document related to the requirement');
 INSERT INTO `dbredb`.`documenttype` (`Name`, `Description`) VALUES ('Goal', 'Document related to the goal');
 INSERT INTO `dbredb`.`documenttype` (`Name`, `Description`) VALUES ('Scenario', 'Document related to the scenario');
@@ -28,6 +31,7 @@ INSERT INTO `dbredb`.`role` (`Name`, `Description`) VALUES ('Monitor and Setting
 INSERT INTO `dbredb`.`role` (`Name`, `Description`) VALUES ('Settings and Diagnosis', 'Access to monitoring and diagnostics');
 INSERT INTO `dbredb`.`role` (`Name`, `Description`) VALUES ('Monitor', 'Access to monitoring');
 INSERT INTO `dbredb`.`role` (`Name`, `Description`) VALUES ('Print', 'Access to printing reports');
+
 INSERT INTO `dbredb`.`stakeholder` (`Name`, `Surname`, `StakeholderType_ID`) VALUES ('Bill ', 'Naidoo', '2');
 INSERT INTO `dbredb`.`stakeholder` (`Name`, `Surname`, `StakeholderType_ID`) VALUES ('Lucy ', 'Cook', '1');
 INSERT INTO `dbredb`.`stakeholder` (`Name`, `Surname`, `StakeholderType_ID`) VALUES ('Mark Real', 'Willrow', '3');
@@ -59,3 +63,20 @@ INSERT INTO `dbredb`.`Document` (`Type_ID`, `Name`, `Data`) VALUES (9, 'A Health
 INSERT INTO `dbredb`.`Document` (`Type_ID`, `Name`, `Data`) VALUES (9, 'A Wealthy Doctor', ``);
 INSERT INTO `dbredb`.`Document` (`Type_ID`, `Name`, `Data`) VALUES (10, 'Requirement Types', ``);
 INSERT INTO `dbredb`.`Document` (`Type_ID`, `Name`, `Data`) VALUES (11, 'Doctor Patient Relationships', ``);
+
+
+INSERT INTO `dbredb`.`user` (`Name`, `Description`) VALUES ('Gillian Moyers', 'Night staff Technician');
+INSERT INTO `dbredb`.`user` (`Name`, `Description`) VALUES ('Phil Ben Zaik', 'Temp Nurse ');
+INSERT INTO `dbredb`.`user` (`Name`, `Description`) VALUES ('Rolf Baines', 'Only works in wing four');
+INSERT INTO `dbredb`.`user` (`Name`, `Description`) VALUES ('Lisa Maon', 'Physician');
+INSERT INTO `dbredb`.`user` (`Name`, `Description`) VALUES ('Jake Willow', 'Night staff nurse');
+
+INSERT INTO `dbredb`.`userrole` (`User_ID`, `Role_ID`) VALUES ('1', '10');
+INSERT INTO `dbredb`.`userrole` (`User_ID`, `Role_ID`) VALUES ('1', '11');
+INSERT INTO `dbredb`.`userrole` (`User_ID`, `Role_ID`) VALUES ('2', '11');
+INSERT INTO `dbredb`.`userrole` (`User_ID`, `Role_ID`) VALUES ('2', '12');
+INSERT INTO `dbredb`.`userrole` (`User_ID`, `Role_ID`) VALUES ('3', '11');
+INSERT INTO `dbredb`.`userrole` (`User_ID`, `Role_ID`) VALUES ('4', '1');
+INSERT INTO `dbredb`.`userrole` (`User_ID`, `Role_ID`) VALUES ('5', '10');
+INSERT INTO `dbredb`.`userrole` (`User_ID`, `Role_ID`) VALUES ('5', '11');
+INSERT INTO `dbredb`.`userrole` (`User_ID`, `Role_ID`) VALUES ('5', '12');
