@@ -17,11 +17,6 @@ CREATE TABLE IF NOT EXISTS `dbREDB`.`User` (
   `UserRole_ID` INT(10) UNSIGNED NOT NULL,
   PRIMARY KEY (`ID`, `UserRole_ID`),
   INDEX `fk_User_UserRole1_idx` (`UserRole_ID` ASC),
-  CONSTRAINT `fk_User_UserRole1`
-    FOREIGN KEY (`UserRole_ID`)
-    REFERENCES `dbREDB`.`UserRole` (`ID`)
-    ON DELETE CASCADE
-    ON UPDATE NO ACTION)
   ENGINE = InnoDB
   DEFAULT CHARACTER SET = latin1;
 
