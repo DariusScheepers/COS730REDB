@@ -225,7 +225,100 @@ CREATE TABLE IF NOT EXISTS `dbREDB`.`ProjectRequirement` (
 -- Danielle eindig
 
 -- Kobus begin
+CREATE TABLE IF NOT EXISTS `dbredb`.`Conflict` (
+  `ID` INT(10) UNSIGNED NOT NULL AUTO_INCREMENT,
+  `Name` VARCHAR(50) NOT NULL,
+  `Description` VARCHAR(100) NOT NULL,
+  PRIMARY KEY (`ID`),
+  INDEX `ID` (`ID` ASC))
+ENGINE = InnoDB
+DEFAULT CHARACTER SET = latin1;
 
+CREATE TABLE IF NOT EXISTS `dbredb`.`Goal` (
+  `ID` INT(10) UNSIGNED NOT NULL AUTO_INCREMENT,
+  `Stakeholder_ID` INT(10) UNSIGNED NOT NULL,
+  `Project_ID` INT(10) UNSIGNED NOT NULL,
+  `Name` VARCHAR(50) NOT NULL,
+  `Description` VARCHAR(100) NOT NULL,
+  `HasConflict` boolean NOT NULL,
+  PRIMARY KEY (`ID`),
+  INDEX `ID` (`ID` ASC),
+  CONSTRAINT `fk_Goal_Stakeholder`
+    FOREIGN KEY (`Stakeholder_ID`)
+    REFERENCES `dbREDB`.`Stakeholder` (`ID`)
+    ON DELETE CASCADE
+    ON UPDATE NO ACTION,
+  CONSTRAINT `fk_Goal_Project`
+    FOREIGN KEY (`Project_ID`)
+    REFERENCES `dbREDB`.`Project` (`ID`)
+    ON DELETE CASCADE
+    ON UPDATE NO ACTION)
+ENGINE = InnoDB
+DEFAULT CHARACTER SET = latin1;
+
+CREATE TABLE IF NOT EXISTS `dbredb`.`GoalConflict` (
+  `ID` INT(10) UNSIGNED NOT NULL AUTO_INCREMENT,
+  `Goal_ID` INT(10) UNSIGNED NOT NULL,
+  `Conflict_ID` INT(10) UNSIGNED NOT NULL,
+  PRIMARY KEY (`ID`),
+  INDEX `ID` (`ID` ASC),
+  CONSTRAINT `fk_GoalConflict_Goal`
+    FOREIGN KEY (`Goal_ID`)
+    REFERENCES `dbREDB`.`Goal` (`ID`)
+    ON DELETE CASCADE
+    ON UPDATE NO ACTION,
+  CONSTRAINT `fk_GoalConflict_Conflict`
+    FOREIGN KEY (`Conflict_ID`)
+    REFERENCES `dbREDB`.`Conflict` (`ID`)
+    ON DELETE CASCADE
+    ON UPDATE NO ACTION
+)
+ENGINE = InnoDB
+DEFAULT CHARACTER SET = latin1;
+
+CREATE TABLE IF NOT EXISTS `dbredb`.`DocumentType` (
+  `ID` INT(10) UNSIGNED NOT NULL AUTO_INCREMENT,
+  `Name` VARCHAR(50) NOT NULL,
+  `Description` VARCHAR(100) NOT NULL,
+  PRIMARY KEY (`ID`),
+  INDEX `ID` (`ID` ASC))
+ENGINE = InnoDB
+DEFAULT CHARACTER SET = latin1;
+
+CREATE TABLE IF NOT EXISTS `dbredb`.`Document` (
+  `ID` INT(10) UNSIGNED NOT NULL AUTO_INCREMENT,
+  `Type_ID` INT(10) UNSIGNED NOT NULL,
+  `Name` VARCHAR(50) NOT NULL,
+  `Data` VARCHAR(100) NOT NULL,
+  PRIMARY KEY (`ID`),
+  INDEX `ID` (`ID` ASC),
+  INDEX `fk_Document_DocumentType_idx` (`Type_ID` ASC),
+  CONSTRAINT `fk_Document_DocumentType`
+    FOREIGN KEY (`Type_ID`)
+    REFERENCES `dbREDB`.`DocumentType` (`ID`)
+    ON DELETE CASCADE
+    ON UPDATE NO ACTION)
+ENGINE = InnoDB
+DEFAULT CHARACTER SET = latin1;
+
+CREATE TABLE IF NOT EXISTS `dbredb`.`ProjectDocument` (
+  `ID` INT(10) UNSIGNED NOT NULL AUTO_INCREMENT,
+  `Document_ID` INT(10) UNSIGNED NOT NULL,
+  `Project_ID` INT(10) UNSIGNED NOT NULL,
+  PRIMARY KEY (`ID`),
+  INDEX `ID` (`ID` ASC),
+  CONSTRAINT `fk_ProjectDocument_Document`
+    FOREIGN KEY (`Document_ID`)
+    REFERENCES `dbREDB`.`Document` (`ID`)
+    ON DELETE CASCADE
+    ON UPDATE NO ACTION,
+  CONSTRAINT `fk_ProjectDocument_Project`
+    FOREIGN KEY (`Project_ID`)
+    REFERENCES `dbREDB`.`Project` (`ID`)
+    ON DELETE CASCADE
+    ON UPDATE NO ACTION)
+ENGINE = InnoDB
+DEFAULT CHARACTER SET = latin1;
 -- Kobus eindig
 
 -- So as ons alles to en met hierdie lyntjie op n MySQL workbench run sal die db gemaak word.
