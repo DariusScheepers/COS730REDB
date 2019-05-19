@@ -10,3 +10,14 @@ INSERT INTO `dbredb`.`requirementtype` (`Name`, `Description`) VALUES ('Function
 INSERT INTO `dbredb`.`requirementtype` (`Name`, `Description`) VALUES ('Performance Requirement', 'System Performance');
 INSERT INTO `dbredb`.`requirementtype` (`Name`, `Description`) VALUES ('External Interface Requirement', 'System Interface and UI ');
 INSERT INTO `dbredb`.`requirementtype` (`Name`, `Description`) VALUES ('Design Contraint', 'System Limitations');
+INSERT INTO `dbredb`.`documenttype` (`Name`, `Description`) VALUES ('Requirement', 'Document related to the requirement');
+INSERT INTO `dbredb`.`documenttype` (`Name`, `Description`) VALUES ('Goal', 'Document related to the goal');
+INSERT INTO `dbredb`.`documenttype` (`Name`, `Description`) VALUES ('Scenario', 'Document related to the scenario');
+INSERT INTO `dbredb`.`documenttype` (`Name`, `Description`) VALUES ('Conflict', 'Document related to the conflict');
+INSERT INTO `dbredb`.`documenttype` (`Name`, `Description`) VALUES ('User', 'Document related to the user');
+INSERT INTO `dbredb`.`documenttype` (`Name`, `Description`) VALUES ('Stakeholder', 'Document related to stakeholder');
+INSERT INTO `dbredb`.`documenttype` (`Name`, `Description`) VALUES ('Project', 'Document related to the project');
+INSERT INTO `dbredb`.`documenttype` (`Name`, `Description`) VALUES ('User Role', 'Document related to the user role');
+INSERT INTO `dbredb`.`documenttype` (`Name`, `Description`) VALUES ('StakeHolder Goal', 'Document related to the stakeholder goal');
+INSERT INTO `dbredb`.`documenttype` (`Name`, `Description`) VALUES ('Requirement Type', 'Document related to the requirement type');
+INSERT INTO `dbredb`.`documenttype` (`Name`, `Description`) VALUES ('Role', 'Document related to the role');
