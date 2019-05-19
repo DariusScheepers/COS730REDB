@@ -1,0 +1,12 @@
+INSERT INTO `dbredb`.`project` (`Name`, `Description`) VALUES ('Pacemaker', 'Pacemaker Software System');
+INSERT INTO `dbredb`.`stakeholdertype` (`Name`, `Description`) VALUES ('Patient', 'Using the pacemaker');
+INSERT INTO `dbredb`.`stakeholdertype` (`Name`, `Description`) VALUES ('Physician', 'Physician implanting or setting the pacemaker');
+INSERT INTO `dbredb`.`stakeholdertype` (`Name`, `Description`) VALUES ('Technician', 'Setting the pacemaker');
+INSERT INTO `dbredb`.`stakeholdertype` (`Name`, `Description`) VALUES ('Nurse', 'Setting the pacemaker');
+INSERT INTO `dbredb`.`stakeholdertype` (`Name`, `Description`) VALUES ('Software Engineer', 'Developing and maintaining the system');
+INSERT INTO `dbredb`.`stakeholdertype` (`Name`, `Description`) VALUES ('Hardware Engineer', 'Setting up and maintaining the system hardware');
+INSERT INTO `dbredb`.`stakeholdertype` (`Name`, `Description`) VALUES ('General Staff', 'Any hospital staff assisting with using the system');
+INSERT INTO `dbredb`.`requirementtype` (`Name`, `Description`) VALUES ('Functional Requirement', 'System Functionality');
+INSERT INTO `dbredb`.`requirementtype` (`Name`, `Description`) VALUES ('Performance Requirement', 'System Performance');
+INSERT INTO `dbredb`.`requirementtype` (`Name`, `Description`) VALUES ('External Interface Requirement', 'System Interface and UI ');
+INSERT INTO `dbredb`.`requirementtype` (`Name`, `Description`) VALUES ('Design Contraint', 'System Limitations');
