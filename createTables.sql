@@ -22,12 +22,6 @@ CREATE TABLE IF NOT EXISTS `dbREDB`.`User` (
     FOREIGN KEY (`UserRole_ID`)
     REFERENCES `dbREDB`.`UserRole` (`ID`)
     ON DELETE CASCADE
-    ON UPDATE NO ACTION,
-  INDEX `fk_User_Stakeholder1_idx` (`Stakeholder_ID` ASC),
-  CONSTRAINT `fk_User_Stakeholder1`
-    FOREIGN KEY (`Stakeholder_ID`)
-    REFERENCES `dbREDB`.`Stakeholder` (`ID`)
-    ON DELETE CASCADE
     ON UPDATE NO ACTION)
   ENGINE = InnoDB
   DEFAULT CHARACTER SET = latin1;
