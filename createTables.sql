@@ -57,15 +57,9 @@ CREATE TABLE IF NOT EXISTS `dbREDB`.`Role` (
   `ID` INT(10) UNSIGNED NOT NULL AUTO_INCREMENT,
   `Name` VARCHAR(50) NOT NULL,
   `Description` VARCHAR(100) NOT NULL,
-  `UserRole_ID` INT(10) UNSIGNED NOT NULL,
-  PRIMARY KEY (`ID`, `UserRole_ID`),
-  INDEX `fk_Role_UserRole1_idx` (`UserRole_ID` ASC),
-  CONSTRAINT `fk_Role_UserRole1`
-    FOREIGN KEY (`UserRole_ID`)
-    REFERENCES `dbREDB`.`UserRole` (`ID`)
-    ON DELETE CASCADE
-    ON UPDATE NO ACTION)
-  ENGINE = InnoDB
+  PRIMARY KEY (`ID`),
+  INDEX `ID` (`ID` ASC))
+ENGINE = InnoDB
 DEFAULT CHARACTER SET = latin1;
 
 CREATE TABLE IF NOT EXISTS `dbREDB`.`Stakeholder` (
