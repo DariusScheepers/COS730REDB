@@ -21,3 +21,19 @@ INSERT INTO `dbredb`.`documenttype` (`Name`, `Description`) VALUES ('User Role',
 INSERT INTO `dbredb`.`documenttype` (`Name`, `Description`) VALUES ('StakeHolder Goal', 'Document related to the stakeholder goal');
 INSERT INTO `dbredb`.`documenttype` (`Name`, `Description`) VALUES ('Requirement Type', 'Document related to the requirement type');
 INSERT INTO `dbredb`.`documenttype` (`Name`, `Description`) VALUES ('Role', 'Document related to the role');
+
+INSERT INTO `dbredb`.`Document` (`Type_ID`, `Name`, `Data`) VALUES (1, 'Requirements Specification', ``);
+INSERT INTO `dbredb`.`Document` (`Type_ID`, `Name`, `Data`) VALUES (2, 'Why We Need Better Managed Pacemakers. TheMed Journal Article', ``);
+INSERT INTO `dbredb`.`Document` (`Type_ID`, `Name`, `Data`) VALUES (3, 'Functional Specification', ``);
+INSERT INTO `dbredb`.`Document` (`Type_ID`, `Name`, `Data`) VALUES (4, 'Documented Conflicts as on executive meeting on 19052019', ``);
+INSERT INTO `dbredb`.`Document` (`Type_ID`, `Name`, `Data`) VALUES (5, 'User manual.', ``);
+INSERT INTO `dbredb`.`Document` (`Type_ID`, `Name`, `Data`) VALUES (6, 'Patient Profiles.', ``);
+INSERT INTO `dbredb`.`Document` (`Type_ID`, `Name`, `Data`) VALUES (6, 'PR Profiles.', ``);
+INSERT INTO `dbredb`.`Document` (`Type_ID`, `Name`, `Data`) VALUES (6, 'Hopsital Staff Profiles.', ``);
+INSERT INTO `dbredb`.`Document` (`Type_ID`, `Name`, `Data`) VALUES (6, 'Executive Profiles.', ``);
+INSERT INTO `dbredb`.`Document` (`Type_ID`, `Name`, `Data`) VALUES (7, 'PACEMAKER', ``);
+INSERT INTO `dbredb`.`Document` (`Type_ID`, `Name`, `Data`) VALUES (8, 'Pacemaker for Doctors', ``);
+INSERT INTO `dbredb`.`Document` (`Type_ID`, `Name`, `Data`) VALUES (9, 'A Healthy Patient', ``);
+INSERT INTO `dbredb`.`Document` (`Type_ID`, `Name`, `Data`) VALUES (9, 'A Wealthy Doctor', ``);
+INSERT INTO `dbredb`.`Document` (`Type_ID`, `Name`, `Data`) VALUES (10, 'Requirement Types', ``);
+INSERT INTO `dbredb`.`Document` (`Type_ID`, `Name`, `Data`) VALUES (11, 'Doctor Patient Relationships', ``);
