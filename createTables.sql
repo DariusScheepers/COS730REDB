@@ -270,7 +270,7 @@ CREATE TABLE IF NOT EXISTS `dbredb`.`Document` (
   `ID` INT(10) UNSIGNED NOT NULL AUTO_INCREMENT,
   `Type_ID` INT(10) UNSIGNED NOT NULL,
   `Name` VARCHAR(50) NOT NULL,
-  `Data` VARCHAR(100) NOT NULL,
+  `DocData` VARCHAR(100) NOT NULL,
   PRIMARY KEY (`ID`),
   INDEX `ID` (`ID` ASC),
   INDEX `fk_Document_DocumentType_idx` (`Type_ID` ASC),
