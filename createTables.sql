@@ -15,18 +15,11 @@ CREATE TABLE IF NOT EXISTS `dbREDB`.`User` (
   `Name` VARCHAR(50) NOT NULL,
   `Description` VARCHAR(100) NOT NULL,
   `UserRole_ID` INT(10) UNSIGNED NOT NULL,
-  `Stakeholder_ID` INT(10) UNSIGNED NOT NULL,
-  PRIMARY KEY (`ID`, `UserRole_ID`, `Stakeholder_ID`),
+  PRIMARY KEY (`ID`, `UserRole_ID`),
   INDEX `fk_User_UserRole1_idx` (`UserRole_ID` ASC),
   CONSTRAINT `fk_User_UserRole1`
     FOREIGN KEY (`UserRole_ID`)
     REFERENCES `dbREDB`.`UserRole` (`ID`)
-    ON DELETE CASCADE
-    ON UPDATE NO ACTION,
-  INDEX `fk_User_Stakeholder1_idx` (`Stakeholder_ID` ASC),
-  CONSTRAINT `fk_User_Stakeholder1`
-    FOREIGN KEY (`Stakeholder_ID`)
-    REFERENCES `dbREDB`.`Stakeholder` (`ID`)
     ON DELETE CASCADE
     ON UPDATE NO ACTION)
   ENGINE = InnoDB
