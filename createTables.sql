@@ -158,6 +158,70 @@ CREATE TABLE IF NOT EXISTS `dbREDB`.`ProjectStakeholder` (
 
 -- Danielle begin
 
+CREATE TABLE IF NOT EXISTS `dbredb`.`Project` (
+  `ID` INT(10) UNSIGNED NOT NULL AUTO_INCREMENT,
+  `Name` VARCHAR(50) NOT NULL,
+  `Description` VARCHAR(100) NOT NULL,
+  PRIMARY KEY (`ID`),
+  INDEX `ID` (`ID` ASC))
+ENGINE = InnoDB
+DEFAULT CHARACTER SET = latin1;
+
+CREATE TABLE IF NOT EXISTS `dbredb`.`RequirementType` (
+  `ID` INT(10) UNSIGNED NOT NULL AUTO_INCREMENT,
+  `Name` VARCHAR(50) NOT NULL,
+  `Description` VARCHAR(100) NOT NULL,
+  PRIMARY KEY (`ID`),
+  INDEX `ID` (`ID` ASC))
+ENGINE = InnoDB
+DEFAULT CHARACTER SET = latin1;
+
+CREATE TABLE IF NOT EXISTS `dbredb`.`Requirement` (
+  `ID` INT(10) UNSIGNED NOT NULL AUTO_INCREMENT,
+  `RequirementType_ID` INT(10) UNSIGNED NOT NULL,
+  `Project_ID` INT(10) UNSIGNED NOT NULL,
+  `Name` VARCHAR(50) NOT NULL,
+  `Description` VARCHAR(100) NOT NULL,
+  `Priority` VARCHAR(1) NOT NULL,
+  PRIMARY KEY (`ID`),
+  INDEX `ID` (`ID` ASC),
+  INDEX `fk_Requirement_RequirementType_idx` (`RequirementType_ID` ASC),
+  CONSTRAINT `fk_Requirement_RequirementType`
+    FOREIGN KEY (`RequirementType_ID`)
+    REFERENCES `dbREDB`.`RequirementType` (`ID`)
+    ON DELETE CASCADE
+    ON UPDATE NO ACTION,
+    INDEX `fk_Requirement_Project_idx` (`Project_ID` ASC),
+  CONSTRAINT `fk_Requirement_Project`
+    FOREIGN KEY (`Project_ID`)
+    REFERENCES `dbREDB`.`Project` (`ID`)
+    ON DELETE CASCADE
+    ON UPDATE NO ACTION)
+ENGINE = InnoDB
+DEFAULT CHARACTER SET = latin1;
+
+
+
+CREATE TABLE IF NOT EXISTS `dbREDB`.`ProjectRequirement` (
+  `ID` INT(10) UNSIGNED  NOT NULL AUTO_INCREMENT,
+  `Project_ID` INT(10) UNSIGNED  NOT NULL,
+  `Requirement_ID` INT(10) UNSIGNED  NOT NULL,
+ PRIMARY KEY (`ID`, `Project_ID`, `Requirement_ID`),
+  INDEX `fk_ProjectRequirement_Requirement_idx` (`Requirement_ID` ASC),
+  CONSTRAINT `fk_ProjectRequirement_Project`
+    FOREIGN KEY (`Requirement_ID`)
+    REFERENCES `dbREDB`.`Requirement` (`ID`)
+    ON DELETE CASCADE
+    ON UPDATE NO ACTION,
+  INDEX `fk_ProjectRequirement_Project_idx` (`Project_ID` ASC),
+  CONSTRAINT `fk_ProjectRequirement_Requirement`
+    FOREIGN KEY (`Project_ID`)
+    REFERENCES `dbredb`.`Project` (`ID`)
+    ON DELETE CASCADE
+    ON UPDATE NO ACTION)
+  ENGINE = InnoDB
+  DEFAULT CHARACTER SET = latin1;
+
 -- Danielle eindig
 
 -- Kobus begin
