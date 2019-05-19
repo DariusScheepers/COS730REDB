@@ -80,11 +80,11 @@ INSERT INTO `dbredb`.`projectdocument` (`Document_ID`, `Project_ID`) VALUES ('13
 INSERT INTO `dbredb`.`projectdocument` (`Document_ID`, `Project_ID`) VALUES ('14', '1');
 INSERT INTO `dbredb`.`projectdocument` (`Document_ID`, `Project_ID`) VALUES ('15', '1');
 
-INSERT INTO `dbredb`.`user` (`Name`, `Description`) VALUES ('Gillian Moyers', 'Night staff Technician');
-INSERT INTO `dbredb`.`user` (`Name`, `Description`) VALUES ('Phil Ben Zaik', 'Temp Nurse ');
-INSERT INTO `dbredb`.`user` (`Name`, `Description`) VALUES ('Rolf Baines', 'Only works in wing four');
-INSERT INTO `dbredb`.`user` (`Name`, `Description`) VALUES ('Lisa Maon', 'Physician');
-INSERT INTO `dbredb`.`user` (`Name`, `Description`) VALUES ('Jake Willow', 'Night staff nurse');
+INSERT INTO `dbredb`.`user` (`Description`,`StakeHolder_ID`) VALUES ('Implanting and Follow Up', 1);
+INSERT INTO `dbredb`.`user` (`Description`,`StakeHolder_ID`) VALUES ('Validation and Maintenance of the System', 3);
+INSERT INTO `dbredb`.`user` (`Description`,`StakeHolder_ID`) VALUES ('Monitor and Limited Treatment of Patient', 4);
+INSERT INTO `dbredb`.`user` (`Description`,`StakeHolder_ID`) VALUES ('Monitor Patient', 15);
+
 
 INSERT INTO `dbredb`.`userrole` (`User_ID`, `Role_ID`) VALUES ('1', '10');
 INSERT INTO `dbredb`.`userrole` (`User_ID`, `Role_ID`) VALUES ('1', '11');
