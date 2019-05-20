@@ -138,8 +138,8 @@ INSERT INTO `dbredb`.`Goal` (`Project_ID`, `Name`, `Description`, `HasConflict`)
 INSERT INTO `dbredb`.`Goal` (`Project_ID`, `Name`, `Description`, `HasConflict`) VALUES ('1', 'Change parameters and operating mode', 'Operators are able to change the operating parameters of the PG through the DCM', false);
 INSERT INTO `dbredb`.`Goal` (`Project_ID`, `Name`, `Description`, `HasConflict`) VALUES ('1', 'User Diagnostics', 'DCM provides details collected from PG', false);
 INSERT INTO `dbredb`.`Goal` (`Project_ID`, `Name`, `Description`, `HasConflict`) VALUES ('1', 'Communication between DCM and PG', 'PG sends live data to DCM and DCM is able to adjust parameters of PG operation', false);
-INSERT INTO `dbredb`.`Goal` (`Project_ID`, `Name`, `Description`, `HasConflict`) VALUES ('1', 'Print records', 'DCM is able to print data records captured by the PG', false);
-INSERT INTO `dbredb`.`Goal` (`Project_ID`, `Name`, `Description`, `HasConflict`) VALUES ('1', 'Display rate histograms', 'DCM is able to display graphs based on data captured by the PG', false);
+INSERT INTO `dbredb`.`Goal` (`Project_ID`, `Name`, `Description`, `HasConflict`) VALUES ('1', 'Print records', 'DCM is able to print data records captured by the PG', true);
+INSERT INTO `dbredb`.`Goal` (`Project_ID`, `Name`, `Description`, `HasConflict`) VALUES ('1', 'Display rate histograms', 'DCM is able to display graphs based on data captured by the PG', true);
 INSERT INTO `dbredb`.`Goal` (`Project_ID`, `Name`, `Description`, `HasConflict`) VALUES ('1', 'Historical data on device', 'DCM system provides historical data on PG device performance', false);
 
 INSERT INTO `dbredb`.`StakeholderGoal` (`Stakeholder_ID`, `Goal_ID`) VALUES ('2', '1');
@@ -183,15 +183,12 @@ INSERT INTO `dbredb`.`Scenario` (`Name`, `Description`, `User_ID`, `Goal_ID`) VA
 INSERT INTO `dbredb`.`Scenario` (`Name`, `Description`, `User_ID`, `Goal_ID`) VALUES ('Scenario 8', 'The DCM collects all the data that it has received and stored from the PG and displays it to the user in a readable format.', '1', '8');
 INSERT INTO `dbredb`.`Scenario` (`Name`, `Description`, `User_ID`, `Goal_ID`) VALUES ('Scenario 9', 'The Pacemaker system gets implanted into the patient’s body where the PG and lead system is able to monitor the patient’s heart rate and regulate it if needed.', '5', '1');
 
-INSERT INTO `dbredb`.`user` (`Description`,`StakeHolder_ID`) VALUES ('Implanting and Follow Up', 1);
-INSERT INTO `dbredb`.`user` (`Description`,`StakeHolder_ID`) VALUES ('Validation and Maintenance of the System', 3);
-INSERT INTO `dbredb`.`user` (`Description`,`StakeHolder_ID`) VALUES ('Monitor and Limited Treatment of Patient', 4);
-INSERT INTO `dbredb`.`user` (`Description`,`StakeHolder_ID`) VALUES ('Monitor Patient', 15);
-INSERT INTO `dbredb`.`user` (`Description`,`StakeHolder_ID`) VALUES ('Receives treatment from System', 8);
+INSERT INTO `dbredb`.`Conflict` (`Name`, `Description`) VALUES ('Conflict 1', 'Display Histograms vs display venn diagrams');
+INSERT INTO `dbredb`.`Conflict` (`Name`, `Description`) VALUES ('Conflict 2', 'Email results vs print results');
 
-INSERT INTO `dbredb`.`Conflict` (`Name`, `Description`) VALUES ('Conflict 1', 'Description here');
 
-INSERT INTO `dbredb`.`GoalConflict` (`Goal_ID`, `Conflict_ID`) VALUES ('1', '1');
+INSERT INTO `dbredb`.`GoalConflict` (`Goal_ID`, `Conflict_ID`) VALUES ('6', '2');
+INSERT INTO `dbredb`.`GoalConflict` (`Goal_ID`, `Conflict_ID`) VALUES ('7', '1');
 
 
 
