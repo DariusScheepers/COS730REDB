@@ -133,3 +133,14 @@ INSERT INTO `dbredb`.`projectrequirement` (`Project_ID`, `Requirement_ID`) VALUE
 INSERT INTO `dbredb`.`projectrequirement` (`Project_ID`, `Requirement_ID`) VALUES ('1', '11');
 INSERT INTO `dbredb`.`projectrequirement` (`Project_ID`, `Requirement_ID`) VALUES ('1', '12');
 
+INSERT INTO `dbredb`.`Goal` (`Stakeholder_ID`, `Project_ID`, `Name`, `Description`, `HasConflict`) VALUES ('1', '1', 'Goal1', 'Goal1 Description', true);
+
+INSERT INTO `dbredb`.`Scenario` (`Name`, `Description`, `User_ID`, `Goal_ID`) VALUES ('Scenario 1', 'Description here', '1', '1');
+
+INSERT INTO `dbredb`.`Conflict` (`Name`, `Description`) VALUES ('Conflict 1', 'Description here');
+
+INSERT INTO `dbredb`.`GoalConflict` (`Goal_ID`, `Conflict_ID`) VALUES ('1', '1');
+
+
+
+
