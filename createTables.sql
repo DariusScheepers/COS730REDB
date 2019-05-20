@@ -12,10 +12,16 @@ USE `dbREDB` ;
 
 CREATE TABLE IF NOT EXISTS `dbREDB`.`User` (
   `ID` INT(10) UNSIGNED NOT NULL AUTO_INCREMENT,
-  `Name` VARCHAR(50) NOT NULL,
+  `Stakeholder_ID` INT(10) UNSIGNED NOT NULL,
   `Description` VARCHAR(100) NOT NULL,
   PRIMARY KEY (`ID`),
-  INDEX `ID` (`ID` ASC))
+  INDEX `ID` (`ID` ASC),
+  INDEX `fk_User_Stakeholder_idx` (`Stakeholder_ID` ASC),
+  CONSTRAINT `fk_User_Stakeholder`
+    FOREIGN KEY (`Stakeholder_ID`)
+    REFERENCES `dbREDB`.`Stakeholder` (`ID`)
+    ON DELETE CASCADE
+    ON UPDATE NO ACTION)
 ENGINE = InnoDB
 DEFAULT CHARACTER SET = latin1;
 
@@ -269,8 +275,8 @@ DEFAULT CHARACTER SET = latin1;
 CREATE TABLE IF NOT EXISTS `dbredb`.`Document` (
   `ID` INT(10) UNSIGNED NOT NULL AUTO_INCREMENT,
   `Type_ID` INT(10) UNSIGNED NOT NULL,
-  `Name` VARCHAR(50) NOT NULL,
-  `Data` VARCHAR(100) NOT NULL,
+  `Name` VARCHAR(200) NOT NULL,
+  `DocData` LONGTEXT NOT NULL,
   PRIMARY KEY (`ID`),
   INDEX `ID` (`ID` ASC),
   INDEX `fk_Document_DocumentType_idx` (`Type_ID` ASC),
