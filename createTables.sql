@@ -121,7 +121,7 @@ CREATE TABLE IF NOT EXISTS `dbREDB`.`ProjectStakeholder` (
   CREATE TABLE IF NOT EXISTS `dbREDB`.`Scenario` (
   `ID` INT(10) UNSIGNED NOT NULL AUTO_INCREMENT,
   `Name` VARCHAR(50) NOT NULL,
-  `Description` VARCHAR(100) NOT NULL,
+  `Description` VARCHAR(500) NOT NULL,
   `User_ID` INT(10) UNSIGNED NOT NULL,
   `Goal_ID` INT(10) UNSIGNED NOT NULL,
   PRIMARY KEY (`ID`, `User_ID`, `Goal_ID`),
@@ -223,18 +223,12 @@ DEFAULT CHARACTER SET = latin1;
 
 CREATE TABLE IF NOT EXISTS `dbredb`.`Goal` (
   `ID` INT(10) UNSIGNED NOT NULL AUTO_INCREMENT,
-  `Stakeholder_ID` INT(10) UNSIGNED NOT NULL,
   `Project_ID` INT(10) UNSIGNED NOT NULL,
   `Name` VARCHAR(50) NOT NULL,
   `Description` VARCHAR(100) NOT NULL,
   `HasConflict` boolean NOT NULL,
   PRIMARY KEY (`ID`),
   INDEX `ID` (`ID` ASC),
-  CONSTRAINT `fk_Goal_Stakeholder`
-    FOREIGN KEY (`Stakeholder_ID`)
-    REFERENCES `dbREDB`.`Stakeholder` (`ID`)
-    ON DELETE CASCADE
-    ON UPDATE NO ACTION,
   CONSTRAINT `fk_Goal_Project`
     FOREIGN KEY (`Project_ID`)
     REFERENCES `dbREDB`.`Project` (`ID`)
